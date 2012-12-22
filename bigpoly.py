@@ -87,8 +87,6 @@ class HalfPoly:
 	@classmethod
 	def mulc(cls, a, b, c):
 		# go to double precision
-		a = cls.type(a.coef.astype(uint(bits * 2)))
-		b = cls.type(b.coef.astype(uint(bits * 2)))
 		abc = a * b + c
 		hi = cls.type(abc.coef >> cls.half)
 		lo = cls.type(abc.coef & cls.mask)
